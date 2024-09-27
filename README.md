@@ -19,7 +19,34 @@ The goal is to make sure only herons trigger the water turret, keeping innocent 
 
 To achieve this, I need to **fine-tune** YOLOv10 with images taken from my garden, using the exact environment where the turret will be installed. This fine-tuning allows the model to learn the specific characteristics of herons in the garden context, improving detection accuracy and minimizing false alarms for humans or pets.
 
+## 📁 Project structure
 
+```bash
+.
+├───data 
+│ └───Heron_detector.v2i.yolov8         # Dataset for training and validation 
+│ ├───test 
+│ │ ├───images                          # Test set images
+│ │ └───labels                          # Test set labels in YOLO format
+│ ├───train 
+│ │ ├───images                          # Training set images 
+│ │ └───labels                          # Training set labels in YOLO format 
+│ └───valid 
+│ ├───images                            # Validation set images 
+│ └───labels                            # Validation set labels in YOLO format 
+├───docs │ └───imgs                     # Images used for documentation and project overview 
+├───models                              # Custom and pretrained YOLO models for training
+│ └───best_finetuned_model_cpu.pt       # Finetuned YOLO v10 model
+│ └───best_finetuned_model_gpu.pt       # Finetuned YOLO v10 model 
+│ └───best.pt                           # Best Finetuned YOLO v10 model
+│ └───yolov8l.pt                        # Original YOLO v8 model  
+├───utils                               # Utility scripts and helper functions for data processing, conversion, etc. 
+└───yolov10                             # Directory for YOLOv10 specific assets and scripts
+└───yolov10                             # Directory for YOLOv10 specific assets and scripts
+└───inference_webcam_v10.py             # Python code to do inference on webcam with YOLOv10 finetuned model
+└───inference_webcam.py                 # Python code to do inference on webcam with YOLOv8
+└───requirements.txt                    # Libraries to use for inference on webcam
+```
 ## 🖼️DATASET CREATION
 
 ### 1. Took pictures inside my garden on the specific spot where the turret will be.
