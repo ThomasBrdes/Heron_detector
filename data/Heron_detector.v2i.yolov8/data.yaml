@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Dog', 'Heron', 'Human']
+
+roboflow:
+  workspace: tarendrilworkshop
+  project: heron_detector-ooasg
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/tarendrilworkshop/heron_detector-ooasg/dataset/2
